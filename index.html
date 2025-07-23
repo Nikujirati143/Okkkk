@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zhatpat - Fast Delivery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🚀 Zhatpat</h1>
+    <p>तेज़ सर्विस, भरोसे के साथ!</p>
+    <nav>
+      <a href="products.html">सर्विसेस</a>
+      <a href="login.html">लॉगिन</a>
+      <a href="admin.html">एडमिन</a>
+    </nav>
+  </header>
+  <main>
+    <h2>हमारी कैटेगरीज</h2>
+    <div class="categories">
+      <div class="category">🏍️ फूड डिलीवरी</div>
+      <div class="category">💊 मेडिसिन</div>
+      <div class="category">📦 पार्सल</div>
+      <div class="category">🛵 पिकअप/ड्रॉप</div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2025 Zhatpat</p>
+  </footer>
+</body>
+</html>
+"""
+
+products_html = """
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zhatpat Products</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>📦 Products & Services</h1>
+  <ul>
+    <li>🍔 फूड डिलीवरी - ₹30 से शुरू</li>
+    <li>💊 मेडिसिन - एक्सप्रेस डिलीवरी</li>
+    <li>📦 पार्सल - 1 घंटे में पिकअप</li>
+  </ul>
+  <a href="index.html">🔙 Back</a>
+</body>
+</html>
+"""
+
+login_html = """
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Zhatpat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>लॉगिन या रजिस्टर करें</h1>
+  <button>Customer Login</button>
+  <button>Store Owner Login</button>
+  <button>Delivery Boy Login</button>
+  <a href="index.html">🔙 Back</a>
+</body>
+</html>
+"""
+
+admin_html = """
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Zhatpat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>📊 Admin Dashboard</h1>
+  <ul>
+    <li>ऑर्डर मैनेजमेंट</li>
+    <li>यूजर रजिस्ट्रेशन</li>
+    <li>डिलीवरी ट्रैकिंग</li>
+  </ul>
+  <a href="index.html">🔙 Back</a>
+</body>
+</html>
+"""
+
+style_css = """
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #f2f2f2;
+}
+header {
+  background-color: #009688;
+  color: white;
+  padding: 20px 10px;
+}
+nav a {
+  margin: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+.categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+}
+.category {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+footer {
+  background: #009688;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+"""
+
+# Write files
+with open(os.path.join(public_path, "index.html"), "w", encoding="utf-8") as f:
+    f.write(index_html)
+with open(os.path.join(public_path, "products.html"), "w", encoding="utf-8") as f:
+    f.write(products_html)
+with open(os.path.join(public_path, "login.html"), "w", encoding="utf-8") as f:
+    f.write(login_html)
+with open(os.path.join(public_path, "admin.html"), "w", encoding="utf-8") as f:
+    f.write(admin_html)
+with open(os.path.join(public_path, "style.css"), "w", encoding="utf-8") as f:
+    f.write(style_css)
+
+# Zip the folder
+shutil.make_archive("/mnt/data/Zhatpat_Website_Live", 'zip', base_path)
+
+"/mnt/data/Zhatpat_Website_Live.zip"
